@@ -4,15 +4,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var mongoose_1 = __importDefault(require("mongoose"));
-var ContactSchema = new mongoose_1.default.Schema({
-    name: {
-        type: String,
-        required: true
-    },
-    phone: {
-        type: Number,
-        required: true
-    }
+mongoose_1.default.connect('mongodb://localhost:27017/myContacts', {
+    useUnifiedTopology: true,
+    useNewUrlParser: true
 });
-var Contact = mongoose_1.default.model('Contact', ContactSchema);
-exports.default = Contact;
