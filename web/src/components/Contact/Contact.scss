@@ -1,0 +1,60 @@
+.contact-card {
+    position: relative;
+    width: 100%;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px 0px;
+    background-color: #F4F6FF;
+    color: #2F3A9C;
+
+    .phone-marker {
+        width: 100px;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #5465FF;
+        border-radius: 0px 8px 8px 0px;
+        cursor: pointer;
+        transition: 200ms ease;
+
+        &:hover {
+            background-color: #6171ff;
+        }
+
+        img {
+            max-width: 35px;
+        }
+    }
+
+    .contact-name,
+    .phone-name {
+        font-size: 20px;
+    }
+
+    .actions{
+        display: flex;
+
+        button {
+            width: 45px;
+            height: 45px;
+            background-color: #EBEDFF;
+            border-radius: 50%;
+            margin: 0px 10px;
+            outline: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        img {
+            width: 22px;
+            transition: 100ms ease-in-out;
+
+            &:hover {
+                width: 24px;
+            }
+        }
+    }
+}
