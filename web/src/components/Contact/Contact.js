@@ -1,11 +1,20 @@
 import React from 'react'
 import phoneIcon from '../../assets/icons/phone-icon.svg'
-import './Contact.scss'
-
 import pencilIcon from '../../assets/icons/pencil-icon.svg'
 import binIcon from '../../assets/icons/bin-icon.svg'
+import './Contact.scss'
 
-function Contact() {
+import api from '../../services/api'
+
+function Contact({ name, phone, id }) {
+
+    function deleteContact() {
+        console.log(id)
+
+        api.delete(`contacts/${id}`).then(response => {
+            console.log(response)
+        })
+    }
 
     return (
         <div className="contact-card">
@@ -17,11 +26,11 @@ function Contact() {
             </div>
 
             <div className="contact-name">
-                <p>Vinicius</p>
+                <p>{ name }</p>
             </div>
             
             <div className="contact-phone">
-                <p>951265392</p>
+                <p>{ phone }</p>
             </div>
 
             <div className="actions">
@@ -29,7 +38,7 @@ function Contact() {
                     <img src={pencilIcon} alt="Edit Icon"/>
                 </button>
 
-                <button className="delete">
+                <button onClick={deleteContact} className="delete">
                     <img src={binIcon} alt="Delete Icon"/>
                 </button>
             </div>

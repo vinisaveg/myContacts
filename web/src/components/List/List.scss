@@ -27,24 +27,6 @@
     text-align: center;
 }
 
-button.add-contact {
-    background-color: #5465FF;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    border: none;
-    margin: 50px 0;
-    color: #fff;
-    font-size: 50px;
-    outline: none;
-    transition: 200ms ease;
-    cursor: pointer;
-
-    &:hover {
-        transform: rotate(360deg);
-    }
-}
-
 @media (max-width: 600px) {
     .list {
         width: 100%;

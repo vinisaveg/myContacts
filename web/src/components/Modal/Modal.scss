@@ -1,0 +1,73 @@
+.modal-card {
+    opacity: 0;
+    display: flex;
+    flex-flow: column;
+    position: relative;
+    transform: translateY(-390px);
+    width: 290px;
+    height: 290px;
+    background-color: #F9F9F9;
+    box-shadow: 0px 10px 40px #3f647329;
+    border-radius: 8px;
+    padding: 20px;
+    animation: modalAnimate 200ms forwards;
+
+    h2 {
+        font-size: 20px;
+        color: #2F3A9C;
+    }
+
+    .inputs {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-flow: column;
+        padding: 20px;
+        margin-top: 20px;
+
+        input {
+            background: none;
+            margin: 10px 0px;
+            border: none;
+            border-bottom: 1px solid #2F3A9C;
+            padding: 7px;
+            outline: none;
+            color: #2F3A9C;
+
+            &::placeholder {
+                color: #abb2f1;
+            }
+        }
+    }
+
+    button {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        border: none;
+        outline: none;
+        margin: 0px 20px 20px 0px;
+        padding: 8px 18px;
+        background-color: #5465FF;
+        color: #fff;
+        font-weight: bold;
+        border-radius: 2px;
+        cursor: pointer;
+        transition: 150ms ease;
+
+        &:hover {
+            background: none;
+            border: 1px solid #2F3A9C;
+            color: #2F3A9C;
+        }
+    }
+}
+
+@keyframes modalAnimate {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
