@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-
 import './App.scss'
 
 // Components
@@ -10,11 +9,18 @@ import Modal from './components/Modal/Modal'
 function App() {
 
     const [modal, setModal] = useState([false])
-    const [contacts, setContacts] = useState([])
 
     function showModal() {
 
         setModal(prev => prev ? false : true)
+
+        setPiolho('teste')
+
+    }
+
+    function addContact(contact) {
+
+        console.log(contact)
 
     }
 
@@ -26,7 +32,7 @@ function App() {
             <div className="contacts-list">
                 <List /> 
 
-                <Modal show={modal}/>
+                <Modal show={modal} addHandler={addContact}/>
 
                 <button onClick={showModal} className="add-contact">
 

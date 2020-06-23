@@ -4,7 +4,7 @@ import './Modal.scss'
 import 'regenerator-runtime/runtime'
 import api from '../../services/api'
 
-function Modal({show}) { 
+function Modal({show, addHandler}) { 
 
     if(show === false){
         return null
@@ -23,10 +23,10 @@ function Modal({show}) {
 
     }
 
-    async function addContact() {
-        const response = await api.post('/contacts', contact)
-
-        console.log(response)
+    async function createContact() {
+        const response = await api.post('/contacts', contact).then(response => {
+            addHandler(contact)
+        })
 
     }
 
@@ -43,7 +43,7 @@ function Modal({show}) {
 
             </div>
 
-            <button onClick={addContact} type="submit">Add</button>
+            <button onClick={createContact} type="submit">Add</button>
 
         </div>
     )

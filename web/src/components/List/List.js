@@ -15,20 +15,29 @@ export default function List() {
         })
     }, [])
 
+    function removeContact(id) {
+        
+        let contactsUpdated = contacts.filter(contact => contact._id !== id)
+
+        setContacts(contactsUpdated)
+
+    }
+
     return (
 
         <>   
 
             <div className="list">
 
-                {contacts.length > 1 ? 
+                {contacts.length > 0 ? 
                             <div className="contacts-on-list">
 
                                 {contacts.map(contact => (
                                     <Contact key={contact._id} 
                                             id={contact._id}
                                             name={contact.name} 
-                                            phone={contact.phone}/>
+                                            phone={contact.phone}
+                                            removeHandler={removeContact}/>
                                 ))}        
                             
                             </div>

@@ -6,12 +6,12 @@ import './Contact.scss'
 
 import api from '../../services/api'
 
-function Contact({ name, phone, id }) {
+function Contact({ name, phone, id, removeHandler }) {
 
-    function deleteContact() {
-        console.log(id)
+    async function deleteContact() {
 
-        api.delete(`contacts/${id}`).then(response => {
+        const response = await api.delete(`contacts/${id}`).then(response => {
+            removeHandler(id)
             console.log(response)
         })
     }
