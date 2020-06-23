@@ -5,21 +5,10 @@ import api from '../../services/api'
 // Components
 import Contact from '../Contact/Contact'
 
-export default function List() {
-
-    const [contacts, setContacts] = useState([])
-
-    useEffect(() => {
-        api.get('/contacts').then(response => {
-            setContacts(response.data.contacts)
-        })
-    }, [])
+export default function List({ contacts, deleteContact }) {
 
     function removeContact(id) {
-        
-        let contactsUpdated = contacts.filter(contact => contact._id !== id)
-
-        setContacts(contactsUpdated)
+        deleteContact(id)
 
     }
 

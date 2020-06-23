@@ -25,7 +25,8 @@ function Modal({show, addHandler}) {
 
     async function createContact() {
         const response = await api.post('/contacts', contact).then(response => {
-            addHandler(contact)
+            let newContact = response.data
+            addHandler(newContact)
         })
 
     }

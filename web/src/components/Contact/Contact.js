@@ -4,16 +4,12 @@ import pencilIcon from '../../assets/icons/pencil-icon.svg'
 import binIcon from '../../assets/icons/bin-icon.svg'
 import './Contact.scss'
 
-import api from '../../services/api'
-
 function Contact({ name, phone, id, removeHandler }) {
 
-    async function deleteContact() {
+    function deleteContact() {
 
-        const response = await api.delete(`contacts/${id}`).then(response => {
-            removeHandler(id)
-            console.log(response)
-        })
+        removeHandler(id)
+
     }
 
     return (
