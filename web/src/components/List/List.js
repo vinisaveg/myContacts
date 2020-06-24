@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import './List.scss'
-import api from '../../services/api'
 
 // Components
 import Contact from '../Contact/Contact'

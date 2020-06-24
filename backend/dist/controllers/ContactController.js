@@ -77,7 +77,7 @@ var ContactController = {
                     case 0:
                         contactId = request.params.id;
                         contactUpdates = request.body;
-                        return [4 /*yield*/, Contact_model_1.default.findByIdAndUpdate(contactId, contactUpdates)];
+                        return [4 /*yield*/, Contact_model_1.default.findByIdAndUpdate(contactId, contactUpdates, { new: true })];
                     case 1:
                         contactUpdated = _a.sent();
                         return [2 /*return*/, response.status(200).json(contactUpdated)];

@@ -27,12 +27,17 @@ function Contact({ name, phone, id, removeHandler, editHandler }) {
 
             </div>
 
-            <div className="contact-name">
-                <p>{ name }</p>
-            </div>
-            
-            <div className="contact-phone">
-                <p>{ phone }</p>
+            <div className="contact-infos">
+
+                <div className="contact-name">
+                    <span className="label">Name</span>
+                    <p>{ name }</p>
+                </div>
+                
+                <div className="contact-phone">
+                    <span className="label">Phone</span>
+                    <p>{ phone }</p>
+                </div>
             </div>
 
             <div className="actions">

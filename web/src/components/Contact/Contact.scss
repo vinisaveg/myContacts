@@ -7,7 +7,6 @@
     justify-content: space-between;
     margin: 10px 0px;
     background-color: #F4F6FF;
-    color: #2F3A9C;
     opacity: 0;
     transform: translateX(-50px);
     animation: contactAnimate 200ms forwards;
@@ -28,13 +27,27 @@
         }
 
         img {
-            max-width: 35px;
+            width: 35px;
         }
     }
 
-    .contact-name,
-    .phone-name {
-        font-size: 20px;
+    .contact-infos{
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+
+        .contact-name,
+        .contact-phone {
+            color: #2F3A9C;
+            margin: 0px 50px;
+            font-size: 20px;
+
+            .label{
+                font-size: 14px;
+                color: #9da6e4;
+            }
+        }
+
     }
 
     .actions{
@@ -86,4 +99,83 @@
         opacity: 0;
         transform: translateX(-50px);
     }
+}
+
+@media screen and (max-width: 790px) {
+
+    .contact-card {
+
+        .contact-infos{
+
+            .contact-name,
+            .contact-phone {
+                margin: 0px 20px;
+            }
+        }
+    }
+
+
+}
+
+@media screen and (max-width: 600px) {
+
+    .contact-card {
+
+        .phone-marker {
+            width: 55px;
+    
+            img {
+                width: 25px;
+            }
+        }
+
+        .contact-infos{
+            // flex-flow: column wrap;
+            align-items: flex-start;
+            width: 200px;
+            padding: 0px 15px;
+    
+            .contact-name {
+                margin-bottom: 4px;
+            }
+
+            .contact-name,
+            .contact-phone {
+                margin: 0px;
+                font-size: 14px;
+
+                .label {
+                    font-size: 12px;
+                }
+
+            }
+
+        }
+
+        .actions{
+            display: flex;
+    
+            button {
+                width: 35px;
+                height: 35px;
+                background-color: #EBEDFF;
+                border-radius: 50%;
+                margin: 0px 10px;
+                outline: none;
+                border: none;
+                cursor: pointer;
+            }
+    
+            img {
+                width: 18px;
+                transition: 100ms ease-in-out;
+    
+                &:hover {
+                    width: 20px;
+                }
+            }
+        }
+
+    }
+
 }

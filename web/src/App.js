@@ -57,8 +57,6 @@ function App() {
 
         contactsUpdated.push(editContact)
 
-        console.log(editContact)
-
         setContacts(contactsUpdated)
     }
 

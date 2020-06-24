@@ -24,10 +24,11 @@ const ContactController = {
         let contactId = request.params.id
         let contactUpdates = request.body
 
-        const contactUpdated = await Contact.findByIdAndUpdate(
+        let contactUpdated = await Contact.findByIdAndUpdate(
             contactId,
-            contactUpdates
-        ) 
+            contactUpdates,
+            { new: true }
+        )
 
         return response.status(200).json(contactUpdated)
 
