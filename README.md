@@ -22,7 +22,7 @@ I also made a flowchart on [**_Whimsical_**](https://whimsical.com/TXT55ivNrv4Jh
 
 - [x] Backend
 - [x] Web Application
-- [] Mobile Application (soon)
+- [ ] Mobile Application (soon)
 
 ### Setup Project
 
@@ -66,4 +66,5 @@ Start both backend and web with:
 
 ```
 
+The app should be running on port 8080 now...
 Thank you! :relaxed:
