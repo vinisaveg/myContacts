@@ -20,10 +20,50 @@ I also made a flowchart on [**_Whimsical_**](https://whimsical.com/TXT55ivNrv4Jh
 
 ### Current Application Status
 
-- Backend
-- Web Application
-- Mobile Application
+- [x] Backend
+- [x] Web Application
+- [] Mobile Application (soon)
 
-### Running
+### Setup Project
 
-1. Clone this repo: `$ git clone`
+1. Clone this repo: 
+
+```
+    git clone https://github.com/savegdesigner/myContacts.git
+    cd myContacts
+
+```
+
+2. Install all packages: (in both folders: backend and web)
+
+```
+    yarn install
+
+```
+
+3. Setup MongoDB:
+
+You can download the MongoDB Compass wich I use for my database.
+https://www.mongodb.com/try/download/tools
+
+Then start a new connection and create a Database named "myContacts"
+
+4. Configuring server connection
+
+In the backend folder, "src/server/db.ts" change the mongoose connection with your Local Mongo address wich can be found in the MongoDB Compass app.
+
+```
+    mongoose.connect('mongodb://localhost:27017/myContacts'})
+
+```
+
+### Running the App
+
+Start both backend and web with:
+
+```
+    yarn run dev
+
+```
+
+Thank you! :relaxed:
