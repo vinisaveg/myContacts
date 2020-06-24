@@ -4,11 +4,17 @@ import pencilIcon from '../../assets/icons/pencil-icon.svg'
 import binIcon from '../../assets/icons/bin-icon.svg'
 import './Contact.scss'
 
-function Contact({ name, phone, id, removeHandler }) {
+function Contact({ name, phone, id, removeHandler, editHandler }) {
 
     function deleteContact() {
 
         removeHandler(id)
+
+    }
+
+    function upadateContact() {
+
+        editHandler(id)
 
     }
 
@@ -30,7 +36,7 @@ function Contact({ name, phone, id, removeHandler }) {
             </div>
 
             <div className="actions">
-                <button className="edit">
+                <button onClick={upadateContact} className="edit">
                     <img src={pencilIcon} alt="Edit Icon"/>
                 </button>
 

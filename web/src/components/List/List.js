@@ -5,11 +5,15 @@ import api from '../../services/api'
 // Components
 import Contact from '../Contact/Contact'
 
-export default function List({ contacts, deleteContact }) {
+export default function List({ contacts, deleteContact, updateContact }) {
 
     function removeContact(id) {
         deleteContact(id)
 
+    }
+
+    function editContact(id) {
+        updateContact(id)
     }
 
     return (
@@ -26,7 +30,9 @@ export default function List({ contacts, deleteContact }) {
                                             id={contact._id}
                                             name={contact.name} 
                                             phone={contact.phone}
-                                            removeHandler={removeContact}/>
+                                            removeHandler={removeContact}
+                                            editHandler={editContact}
+                                            />
                                 ))}        
                             
                             </div>

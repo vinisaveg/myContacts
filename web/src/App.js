@@ -11,6 +11,7 @@ function App() {
 
     const [modal, setModal] = useState([])
     const [contacts, setContacts] = useState([])
+    const [editingId, setEditingId] = useState()
 
     useEffect(() => {
 
@@ -21,16 +22,17 @@ function App() {
 
     }, [])
 
-    function showModal() {
-
-        setModal(prev => prev ? false : true)
-
-    }
-
     function addContact(contact) {
 
         setContacts([...contacts, contact])
         setModal(false)
+    }
+
+    function createModal() {
+       setEditingId(null)
+       
+       modal ? setModal(false) : setModal(true)
+
     }
 
     async function deleteContact(id) {
@@ -43,17 +45,44 @@ function App() {
         
     }
 
+    function updateContact(id) {
+
+        setEditingId(id)
+        modal ? setModal(false) : setModal(true)
+
+    }
+
+    function updateContacts(editContact) {
+        let contactsUpdated = contacts.filter(contact => contact._id !== editContact._id)
+
+        contactsUpdated.push(editContact)
+
+        console.log(editContact)
+
+        setContacts(contactsUpdated)
+    }
+
     return (
 
         <div className="app">
             <Header />    
 
             <div className="contacts-list">
-                <List contacts={contacts} deleteContact={deleteContact}/> 
+                <List 
+                    contacts={contacts} 
+                    deleteContact={deleteContact} 
+                    updateContact={updateContact}
+                /> 
 
-                <Modal show={modal} addHandler={addContact}/>
+                <Modal 
+                    editId={editingId} 
+                    editHandler={updateContact} 
+                    addHandler={addContact}
+                    show={modal} 
+                    updateContactsHandler={updateContacts}
+                />
 
-                <button onClick={showModal} className="add-contact">
+                <button onClick={createModal} className="add-contact">
 
                         +
 

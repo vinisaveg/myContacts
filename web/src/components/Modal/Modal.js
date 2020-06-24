@@ -4,7 +4,7 @@ import './Modal.scss'
 import 'regenerator-runtime/runtime'
 import api from '../../services/api'
 
-function Modal({show, addHandler}) { 
+function Modal({show, addHandler, editId, editHandler, updateContactsHandler}) { 
 
     if(show === false){
         return null
@@ -31,10 +31,26 @@ function Modal({show, addHandler}) {
 
     }
 
+    async function editContact() {
+
+        const response = await api.put(`contacts/${editId}`, contact)
+            .then(response => {
+                let contactUpdated = response.data
+                editHandler(editId)
+                contactUpdated._id = editId
+                updateContactsHandler(contactUpdated)
+        })
+
+    }
+
     return (
         <div className="modal-card">
 
-            <h2>Add a new contact</h2>
+            {editId ?
+                <h2>Edit contact</h2>  
+                    :
+                <h2>Add a new contact</h2>   
+            }
 
             <div className="inputs">
                 
@@ -44,7 +60,12 @@ function Modal({show, addHandler}) {
 
             </div>
 
-            <button onClick={createContact} type="submit">Add</button>
+            {editId ? 
+                <button onClick={editContact} type="submit">Update</button>             
+                    :
+                <button onClick={createContact} type="submit">Add</button>
+            }
+
 
         </div>
     )
