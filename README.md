@@ -1,6 +1,6 @@
 ![myContacts](https://github.com/savegdesigner/myContacts/blob/master/myContacts-logo.svg)
 
-## A Web and Mobile application to keep your family and friends contacts organized. :iphone: :bookmark_tabs:
+## A Web and Mobile application to keep all your contacts organized. :iphone: :bookmark_tabs:
 
 ### About
 
