@@ -1,4 +1,6 @@
+<p align="center">
 ![myContacts](https://github.com/savegdesigner/myContacts/blob/master/myContacts-logo.svg)
+</p>
 
 ## A Web and Mobile application to keep all your contacts organized. :iphone: :bookmark_tabs:
 
@@ -12,7 +14,9 @@ The design was made on [**_Figma_**](https://www.figma.com/file/kuKSL5rHCEmXOiM3
 
 ### Project Preview
 
+<p align="center">
 ![myContacts Demo GIF](https://github.com/savegdesigner/myContacts/blob/master/myContacts.gif)
+</p>
 
 ### Application Architecture
 
